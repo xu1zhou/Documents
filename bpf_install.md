@@ -1,13 +1,19 @@
-# 
+# How to write bpf
 
-# bpftool install
-除了自己写代码操作BPF程序，一些工具也可以帮助我们做到这一点。例如linux源码自带的bpftool可以操作部分BPF程序和map，iproute可以将BPF程序加载到网卡，tc可以将tc相关BPF程序加载到tc。
+1. [BBC方式]编写BPF程序，iovisor/bcc[here](https://github.com/iovisor/bcc)项目是一个很好的开始。使用这个项目，可以在python中写BPF代码直接运行，源码里有许多例子可以学习。BCC is a toolkit for creating efficient kernel tracing and manipulation programs, and includes several useful tools and examples
+2. [直接编译bpf字节码方式+bpf调用]：前面提到，我们可以自己编写BPF程序，然后使用llvm+clang编译成BPF格式的字节码(.o字节码)编译命令也十分简单，clang -O2 -target bpf -o bpf prog.o -c bpf prog.c.，然后可以使用系统调用bpf(...)来加载到内核。
+3. [bpftool]除了自己写代码操作BPF程序，一些工具也可以帮助我们做到这一点。例如linux源码自带的bpftool可以操作部分BPF程序和map，iproute可以将BPF程序加载到网卡，tc可以将tc相关BPF程序加载到tc。tool for inspection and simple manipulation of eBPF programs and maps
+## BBC
+## clang+bpf load
+## bpftool 
+https://github.com/torvalds/linux/blob/v5.4/tools/bpf/bpftool/Documentation/bpftool.rst
+install commands
 ```
  git clone --depth=1 https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
  cd linux/tools/bpf/bpftool
  make
 ```
-
+output
  ```bash
 Auto-detecting system features:
 ...                        libbfd: [ on  ]
@@ -65,4 +71,44 @@ Auto-detecting system features:
   LINK     libbpf.a
 make[1]: Leaving directory '/vagrant/linux/tools/lib/bpf'
   LINK     bpftool
+```
+## bpftool usage
+```
+root@node-00:/vagrant/linux/tools/bpf/bpftool# ./bpftool 
+Usage: ./bpftool [OPTIONS] OBJECT { COMMAND | help }
+       ./bpftool batch file FILE
+       ./bpftool version
+
+       OBJECT := { prog | map | link | cgroup | perf | net | feature | btf | gen | struct_ops | iter }
+       OPTIONS := { {-j|--json} [{-p|--pretty}] | {-f|--bpffs} |
+                    {-m|--mapcompat} | {-n|--nomount} }
+```
+
+
+## generate bpf bytecode for sockops
+> root@node-00:/vagrant/bpf/sockops# make all
+```
+clang -I/vagrant/bpf/include -I/vagrant/bpf -D__NR_CPUS__=2 -O2 -g -target bpf -emit-llvm -Wall -Werror -Wno-address-of-packed-member -Wno-unknown-warning-option -DSKIP_DEBUG -DHAVE_LPM_MAP_TYPE -DHAVE_LRU_MAP_TYPE -DENABLE_IPV4 -c bpf_sockops.c -o bpf_sockops.ll
+
+llc -march=bpf -mcpu=probe -mattr=dwarfris -filetype=obj -o bpf_sockops.o bpf_sockops.ll
+clang -I/vagrant/bpf/include -I/vagrant/bpf -D__NR_CPUS__=2 -O2 -g -target bpf -emit-llvm -Wall -Werror -Wno-address-of-packed-member -Wno-unknown-warning-option -DSKIP_DEBUG -DHAVE_LPM_MAP_TYPE -DHAVE_LRU_MAP_TYPE -DENABLE_IPV4 -c bpf_redir.c -o bpf_redir.ll
+
+llc -march=bpf -mcpu=probe -mattr=dwarfris -filetype=obj -o bpf_redir.o bpf_redir.ll
+```
+
+## load bpf bytecode with bpftool
+```
+root@node-00:/vagrant# bash load.sh 
+make: Entering directory '/vagrant/bpf/sockops'
+rm -fr *.o *.ll *.i
+make: Leaving directory '/vagrant/bpf/sockops'
+make: Entering directory '/vagrant/bpf/sockops'
+clang -I/vagrant/bpf/include -I/vagrant/bpf -D__NR_CPUS__=2 -O2 -g -target bpf -emit-llvm -Wall -Werror -Wno-address-of-packed-member -Wno-unknown-warning-option -DSKIP_DEBUG -DHAVE_LPM_MAP_TYPE -DHAVE_LRU_MAP_TYPE -DENABLE_IPV4 -c bpf_sockops.c -o bpf_sockops.ll
+llc -march=bpf -mcpu=probe -mattr=dwarfris -filetype=obj -o bpf_sockops.o bpf_sockops.ll
+clang -I/vagrant/bpf/include -I/vagrant/bpf -D__NR_CPUS__=2 -O2 -g -target bpf -emit-llvm -Wall -Werror -Wno-address-of-packed-member -Wno-unknown-warning-option -DSKIP_DEBUG -DHAVE_LPM_MAP_TYPE -DHAVE_LRU_MAP_TYPE -DENABLE_IPV4 -c bpf_redir.c -o bpf_redir.ll
+llc -march=bpf -mcpu=probe -mattr=dwarfris -filetype=obj -o bpf_redir.o bpf_redir.ll
+make: Leaving directory '/vagrant/bpf/sockops'
+libbpf: maps section in bpf/sockops/bpf_sockops.o: "sock_ops_map" has unrecognized, non-zero options
+Error: failed to pin program sockops
+libbpf: maps section in bpf/sockops/bpf_redir.o: "sock_ops_map" has unrecognized, non-zero options
 ```
