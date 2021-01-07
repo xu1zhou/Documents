@@ -136,12 +136,21 @@ Error: failed to pin program sockops
 libbpf: maps section in bpf/sockops/bpf_redir.o: "sock_ops_map" has unrecognized, non-zero options
 ```
 
-## load bpf analysis
+## bpf code 加载流程
 
+flow: loadtoKernel==>attachhook==>
+action: 
+1. load
+2. attach
+3. pin
 bpftool -m prog load bpf/sockops/bpf_sockops.o "/sys/fs/bpf/bpf_sockop"
-
+1. 将object代码加载进内核,但没attach到hook上
+2. 加载的代码被pin在`bpf虚拟文件系统`方便后续访问加载程序The loaded code is pinned to a BPF virtual filesystem for persistence so that we get a handle to the program to be used later to access the loaded program. 
+3. 可以使用命令`mount -t bpf bpf /sys/fs/bpf/`挂载bpf虚拟文件系统 
+3. 默认情况西bpftool会按照ELF对象申明创建map(in this case the sock_ops_map)
 bpftool cgroup attach "/sys/fs/cgroup/unified/" sock_ops pinned "/sys/fs/bpf/bpf_sockop"
-
+# 1. This attaches the loaded SOCK_OPS program to the cgroup
+2. attach到cgroup,bfp_sockops会适用于cgroup下所有的sockets,当使用cgroupV2,系统会自动创建挂载点)
 bpftool prog show pinned "/sys/fs/bpf/bpf_sockop" 
 ```
 29: sock_ops  name bpf_sockmap  tag 9bd001600514d41a  gpl
@@ -151,9 +160,8 @@ bpftool prog show pinned "/sys/fs/bpf/bpf_sockop"
 
 ```
 $MAP_ID=map_ids=1
-
 bpftool map pin id $MAP_ID "/sys/fs/bpf/sock_ops_map"
-
+1. Now that the object code is loaded and attached to the the SOCK_OPS hook, we need to find the id of the map used by the SOCK_OPS program which can be used to attach the SK_MSG program:
 bpftool -m prog load bpf/sockops/bpf_redir.o "/sys/fs/bpf/bpf_redir" map name sock_ops_map pinned "/sys/fs/bpf/sock_ops_map"
 > /sys/fs/bpf/bpf_sockop ===> /sys/fs/bpf/sock_ops_map ==> /sys/fs/bpf/bpf_redir
 bpftool prog attach pinned "/sys/fs/bpf/bpf_redir" msg_verdict pinned "/sys/fs/bpf/sock_ops_map"
