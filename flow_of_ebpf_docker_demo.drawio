@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-17T15:08:13.804Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36" etag="4jcpfhezkgLSKYerqT8A" version="14.2.4" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-19T08:35:59.678Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36" etag="zN9pCK4QKnhSe-m6nP3k" version="14.3.1" type="github">
   <diagram id="0eA8aw2C4x_AHw5Ap8uo" name="Page-1">
-    <mxGraphModel dx="1550" dy="870" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -69,9 +69,6 @@
         <mxCell id="RCCy9ar9vTBcTcrXnlN3-16" value="socket1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="360" y="40" width="230" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="RCCy9ar9vTBcTcrXnlN3-19" value="tcp/ip stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="360" y="220" width="230" height="20" as="geometry" />
-        </mxCell>
         <mxCell id="CZvVE1L9lmE4_0uoXGFi-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.556;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classic;startFill=1;endArrow=none;endFill=0;" parent="1" source="CZvVE1L9lmE4_0uoXGFi-6" target="CZvVE1L9lmE4_0uoXGFi-95" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -90,9 +87,6 @@
         </mxCell>
         <mxCell id="CZvVE1L9lmE4_0uoXGFi-6" value="socket2" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="830" y="40" width="230" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="CZvVE1L9lmE4_0uoXGFi-7" value="tcp/ip stack" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="830" y="220" width="230" height="20" as="geometry" />
         </mxCell>
         <mxCell id="CZvVE1L9lmE4_0uoXGFi-94" value="" style="shape=table;html=1;whiteSpace=wrap;startSize=0;container=1;collapsible=0;childLayout=tableLayout;fillColor=#fad7ac;strokeColor=#b46504;" parent="1" vertex="1">
           <mxGeometry x="710" y="280" width="45" height="50" as="geometry" />
