@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2021-02-22T03:10:31.317Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="OZ77J0xx8aEDMKNEMeuC" version="14.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-22T05:04:40.033Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="garGUdZuAB1_OxVMkHwL" version="14.4.2" type="github">
   <diagram id="WjnGfr5tVi61NtXpP59C" name="Page-1">
     <mxGraphModel dx="782" dy="475" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="U9tyx0Pv49cAf20qMsl--39" value="A-envoy" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1055" y="95" width="170" height="100" as="geometry" />
+        </mxCell>
         <mxCell id="U9tyx0Pv49cAf20qMsl--1" value="every pod container" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="340" y="160" width="120" height="60" as="geometry" />
         </mxCell>
@@ -58,6 +61,27 @@
         </mxCell>
         <mxCell id="U9tyx0Pv49cAf20qMsl--33" value="" style="shape=partialRectangle;html=1;whiteSpace=wrap;connectable=0;overflow=hidden;fillColor=none;top=0;left=0;bottom=0;right=0;" vertex="1" parent="U9tyx0Pv49cAf20qMsl--30">
           <mxGeometry x="120" width="60" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--34" value="A&lt;br&gt;(client side pod)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="440" y="95" width="180" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--35" value="B&lt;br&gt;(server side pod)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1820" y="95" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--36" value="A-ip(pod_ip):a-app-port(client_random)" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="115" width="240" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--38" value="127.0.0.1:A-outbound-port(15001)" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="870" y="115" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--40" value="B-envoy" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="1470" y="95" width="170" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--41" value="B-ip:B-inbound(15006)" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1370" y="125" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="U9tyx0Pv49cAf20qMsl--42" value="A-ip:A-envoy-port(random)" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="125" width="150" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
