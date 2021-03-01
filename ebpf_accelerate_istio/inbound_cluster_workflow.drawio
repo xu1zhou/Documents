@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-02-03T02:38:29.052Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.104 Safari/537.36" etag="-YWM8l4gaYd1ORP7HEl_" version="14.2.9" type="github">
+<mxfile host="app.diagrams.net" modified="2021-03-01T05:55:38.253Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36" etag="13Gff-yMaTukvB0uUnD7" version="14.4.3" type="github">
   <diagram id="sTk17ND-MVLnAbTTWL7x" name="Page-1">
-    <mxGraphModel dx="1632" dy="1575" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2153" dy="1892" grid="1" gridSize="10" guides="1" tooltips="1" connect="0" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -131,12 +131,12 @@
         <mxCell id="cvl4Ks4fMDcgnYN8bCyd-15" value="localCluster" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="105" y="810" width="90" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="cvl4Ks4fMDcgnYN8bCyd-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="cvl4Ks4fMDcgnYN8bCyd-11" target="cvl4Ks4fMDcgnYN8bCyd-15" edge="1">
+        <mxCell id="cvl4Ks4fMDcgnYN8bCyd-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="cvl4Ks4fMDcgnYN8bCyd-11" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="150" y="830" />
-              <mxPoint x="150" y="830" />
+              <mxPoint x="150" y="820" />
             </Array>
+            <mxPoint x="150" y="810" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="cvl4Ks4fMDcgnYN8bCyd-18" value="localCluster" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
@@ -224,7 +224,7 @@
         <mxCell id="cvl4Ks4fMDcgnYN8bCyd-53" value="gateway proxy" style="text;html=1;strokeColor=#d79b00;fillColor=#ffe6cc;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="-15" y="30" width="110" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="6wCrR8KFPUISyVn_Sti5-1" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;rotation=90;" vertex="1" parent="1">
+        <mxCell id="6wCrR8KFPUISyVn_Sti5-1" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;rotation=90;" parent="1" vertex="1">
           <mxGeometry x="700" y="-94.39" width="20" height="240" as="geometry" />
         </mxCell>
       </root>
