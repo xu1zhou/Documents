@@ -36,7 +36,7 @@ export $TAG;make docker # 对各组件（istioctl、mixer、pilot、istio-auth�
 
     sed -i  "s/tag:.*/tag: '$TAG'/g"  /vagrant/istio-1source/manifests/profiles/default.yaml
 
-    istioctl install --set profile=default  -f manifests/profiles/default.yaml
+    istioctl install --set profile=default  -f /vagrant/istio-1source/manifests/profiles/default.yaml
 
 ```sh
 
