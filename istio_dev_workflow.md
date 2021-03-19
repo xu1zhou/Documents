@@ -18,10 +18,14 @@ export ISTIO=$HOME/istio.io
 # 
 complete -W "\`find . -iname \"?akefil*\" | xargs -I {} grep -hoE '^[a-zA-Z0-9_.-]+:([^=]|$)' {} | sed 's/[^a-zA-Z0-9_.-]*$//' | sort -u\`" make
 
+```
 
+## 下载repo
+```sh
+cd path_of_repo
 ```
 ## 编译
-    make build
+    `make build`
 ## 打镜像
 ```sh
 #TAG=repo-feature-$(date +%m_%d_%H%M) 
