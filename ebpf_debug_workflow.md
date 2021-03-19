@@ -22,13 +22,24 @@ cat /sys/kernel/debug/tracing/trace_pipe
 ## 查看map中的socket
 watch ./bpftool map dump id 117
 
-#性能测试
-docker run -d fortio/fortio:latest_release server
+## 性能测试
+CID=$(docker run -d fortio/fortio:latest_release server)
 
-curl 192.168.219.91:9080
+
+POD_IP=$(kubectl get pod -o wide | grep productpage | awk '{print $6}')
 
 ./bpftool prog show | grep sock
-CID="e9389c429e86"
-docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "192.168.219.91:9080"
 
+docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "$POD_IP:9080/productpage"
 
+# Verification redirection
+默认情况下,host上 /var/log/kern.log 目录无法查看container中iptables log记录
+可以使用以下命令开启
+
+echo 1 > /proc/sys/net/netfilter/nf_log_all_netns
+
+在iptables log中插入不同prefix以示区分
+iptables -I INPUT -s 127.0.0.6 -j LOG --log-prefix '** host namespace **'
+iptables -I INPUT -s 127.0.0.6 -j LOG --log-prefix '** container namespace **'
+
+tail -f /var/log/kern.log

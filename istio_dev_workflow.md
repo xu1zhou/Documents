@@ -25,7 +25,7 @@ complete -W "\`find . -iname \"?akefil*\" | xargs -I {} grep -hoE '^[a-zA-Z0-9_.
 ## 打镜像
 ```sh
 #TAG=repo-feature-$(date +%m_%d_%H%M) 
-TAG=_1source_test_$(date +%m_%d_%H%M) 
+export TAG=_1source_customized_ip_$(date +%m_%d_%H%M) 
 # docker repo: docker.io/xu1zhou
 # local repo: istio
 export HUB="istio"
@@ -34,9 +34,9 @@ export $TAG;make docker # 对各组件（istioctl、mixer、pilot、istio-auth�
 ## 替换部署
 需要替换default 中的tag为最新
 
-    sed -i  "s/tag:.*/tag: '$TAG'/g"  /vagrant/istio-1source/manifests/profiles/default.yaml
+    sed -i  "s/tag:.*/tag: '$TAG'/g"  manifests/profiles/default.yaml
 
-    istioctl install --set profile=default  -f /vagrant/istio-1source/manifests/profiles/default.yaml
+    istioctl install --set profile=default  -f manifests/profiles/default.yaml
 
 ```sh
 
