@@ -38,9 +38,9 @@ export $TAG;make docker # 对各组件（istioctl、mixer、pilot、istio-auth�
 ## 替换部署
 需要替换default 中的tag为最新
 
-    sed -i  "s/tag:.*/tag: '$TAG'/g"  manifests/profiles/default.yaml
+sed -i  "s/tag:.*/tag: '$TAG'/g"  manifests/profiles/default.yaml
 
-    istioctl install --set profile=default  -f manifests/profiles/default.yaml
+istioctl install --set profile=default  -f manifests/profiles/default.yaml
 
 ```sh
 

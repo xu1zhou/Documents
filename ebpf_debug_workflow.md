@@ -51,12 +51,12 @@ bash unload.sh;bash load.sh
 CID=$(docker run -d fortio/fortio:latest_release server)
 POD_IP=$(kubectl get pod -o wide | grep productpage | awk '{print $6}')
 >test_result/enable_ebpf_performence_test1000_times.log
-for i in {1..100};do docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "$POD_IP:9080/productpage" >test_result/enable_ebpf_performence_test1000_times.log;done
+for i in {1..100};do docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "$POD_IP:9080/productpage" >>test_result/enable_ebpf_performence_test1000_times.log;done
 
 # disable
 bash unload.sh
 CID=$(docker run -d fortio/fortio:latest_release server)
 POD_IP=$(kubectl get pod -o wide | grep productpage | awk '{print $6}')
 cat >test_result/disable_ebpf_performence_test1000_times.log;done
-for i in {1..10};do docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "$POD_IP:9080/productpage" >test_result/disable_ebpf_performence_test1000_times.log;done
+for i in {1..10};do docker exec -it $CID fortio load -c 1 -qps 1000 -t 10s -a -r 0.00005 -httpbufferkb=128 "$POD_IP:9080/productpage" >>test_result/disable_ebpf_performence_test1000_times.log;done
 ```

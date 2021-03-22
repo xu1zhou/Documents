@@ -4,7 +4,7 @@ templates for different type of deployment
 - customized part of values for components
 # Charts
 - components definition(bash ,gateway, istio-cni, istio-control)
-## compiled in charts in istioctl
+## compiled charts into istioctl
 2. make gen-charts and rebuild istioctl
 ```sh
 root@master:/vagrant/istio-1source# make gen-charts
@@ -33,4 +33,9 @@ useradd: UID 0 is not unique
 ```
 1. check internal charts with `istioctl profile dump default|demo|....`
 
-## 
+## find a way to generate all configuration of default profile, thus we could check the 
+```
+use command `out/linux_amd64/istioctl manifest generate` check validation
+make gen-charts 
+make build
+```
