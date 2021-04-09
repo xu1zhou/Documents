@@ -36,6 +36,19 @@ useradd: UID 0 is not unique
 ## find a way to generate all configuration of default profile, thus we could check the 
 ```
 use command `out/linux_amd64/istioctl manifest generate` check validation
-make gen-charts 
-make build
+make gen-charts ;make build;./out/linux_amd64/istioctl manifest generate  | less 
+# find deamonset configuration
 ```
+
+## check render from profile value
+make gen-charts ;make build
+our/linux_amd64/istioctl install --set profile=default  -f manifests/profiles/default.yaml
+
+error
+```log
+Istiod encountered an error: failed to update resource with server-side apply for obj DaemonSet/kube-system/bypass-tcpip: DaemonSet.apps "bypass-tcpip" is invalid: spec.template.metadata.labels: Invalid value: map[string]string{"install.operator.istio.io/owning-resource":"unknown", "istio.io/rev":"default", "name":"bypass-tcpip", "operator.istio.io/component":"Pilot"}: `selector` does not match template `labels`
+```
+
+
+## build image for daemonset
+`docker build -t istio/bpf_bypass_tcpip:_1source_customized_ip_03_18_1540  -f Dockerfile .`
