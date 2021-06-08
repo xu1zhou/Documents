@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-08T06:42:39.554Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="Rh16lx14dvnaQ8RUWBqm" version="14.6.13" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-08T06:43:11.646Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="S9pBXXhTISHOi75XwqF7" version="14.6.13" type="github">
   <diagram id="87LNFzpWVNBMK7Gw0o0t" name="Page-1">
     <mxGraphModel dx="782" dy="1575" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -91,7 +91,7 @@
         <mxCell id="frIw0XrVh3BfgqBJoF9k-28" value="App2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="740" y="310" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="frIw0XrVh3BfgqBJoF9k-29" value="ISTIO service&lt;br&gt;(Pre-install)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="frIw0XrVh3BfgqBJoF9k-29" value="ISTIO Services&lt;br&gt;(Pre-install)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="860" y="310" width="110" height="60" as="geometry" />
         </mxCell>
         <mxCell id="frIw0XrVh3BfgqBJoF9k-39" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;sketch=1;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.917;entryY=0.479;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Comic Sans MS;fontSize=17;endArrow=classic;endFill=1;" edge="1" parent="1" source="frIw0XrVh3BfgqBJoF9k-37" target="frIw0XrVh3BfgqBJoF9k-10">
