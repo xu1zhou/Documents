@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-15T05:47:12.108Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="kkzqBYtCZDtGEw1Z-5j6" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-15T07:23:58.236Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="LfYrxaP2LcL8Gi2RPzPS" version="14.7.7" type="github">
   <diagram id="dEx6iI7eKl6fTZGobW3s" name="Page-1">
     <mxGraphModel dx="1185" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -78,6 +78,9 @@
             <mxPoint x="830" y="289" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-35" value="&lt;h1&gt;Heading&lt;/h1&gt;&lt;p&gt;there is no configured limit to the number of allowed active connections. Set a limit via the runtime key overload.global_downstream_max_connections&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;dashed=1;opacity=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="70" width="510" height="120" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
