@@ -1,17 +1,17 @@
-<mxfile host="app.diagrams.net" modified="2021-06-15T02:34:34.676Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="SYCx6NWd0iQn4o0iDV_b" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-15T05:47:12.108Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="kkzqBYtCZDtGEw1Z-5j6" version="14.7.7" type="github">
   <diagram id="dEx6iI7eKl6fTZGobW3s" name="Page-1">
-    <mxGraphModel dx="920" dy="559" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1185" dy="697" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-4" value="Client" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-4" value="Client&lt;br&gt;1 thread&lt;br&gt;muti-conntion" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="60" y="270" width="90" height="155" as="geometry" />
         </mxCell>
         <mxCell id="VkatFb8tjk3PXEhCPRFh-5" value="Envoy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="300" y="250" width="90" height="180" as="geometry" />
         </mxCell>
         <mxCell id="VkatFb8tjk3PXEhCPRFh-7" value="Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="840" y="280" width="60" height="120" as="geometry" />
+          <mxGeometry x="840" y="260" width="80" height="160" as="geometry" />
         </mxCell>
         <mxCell id="VkatFb8tjk3PXEhCPRFh-13" value="scale out" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -19,17 +19,17 @@
             <mxPoint x="200" y="302.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-20" value="128th request" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-20" value="128th connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="-15" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="170" y="397.5" as="sourcePoint" />
             <mxPoint x="280" y="397.5" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-22" value="1st requst" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-22" value="1st connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="15" width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="170" y="297.5" as="sourcePoint" />
-            <mxPoint x="280" y="297.5" as="targetPoint" />
+            <mxPoint x="170" y="290" as="sourcePoint" />
+            <mxPoint x="280" y="290" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -38,21 +38,21 @@
         </mxCell>
         <mxCell id="VkatFb8tjk3PXEhCPRFh-27" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;startArrow=classic;startFill=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="510" y="359.49999999999994" as="sourcePoint" />
-            <mxPoint x="510" y="319.49999999999994" as="targetPoint" />
+            <mxPoint x="510" y="390" as="sourcePoint" />
+            <mxPoint x="510" y="300" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-28" value="capacity of pool request" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-28" value="128th connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="-15" width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="470" y="379.99999999999994" as="sourcePoint" />
-            <mxPoint x="580" y="379.99999999999994" as="targetPoint" />
+            <mxPoint x="470" y="399.99999999999994" as="sourcePoint" />
+            <mxPoint x="580" y="399.99999999999994" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-29" value="1st requst" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-29" value="1st connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="15" width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="470" y="299.99999999999994" as="sourcePoint" />
-            <mxPoint x="580" y="299.99999999999994" as="targetPoint" />
+            <mxPoint x="470" y="289.99999999999994" as="sourcePoint" />
+            <mxPoint x="580" y="289.99999999999994" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
@@ -61,18 +61,18 @@
         </mxCell>
         <mxCell id="VkatFb8tjk3PXEhCPRFh-32" value="scale out" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;endFill=0;startArrow=classic;startFill=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="750" y="384" as="sourcePoint" />
-            <mxPoint x="750" y="294" as="targetPoint" />
+            <mxPoint x="750" y="392.5" as="sourcePoint" />
+            <mxPoint x="750" y="302.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-33" value="128th request" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-33" value="128th connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="-15" width="50" height="50" relative="1" as="geometry">
-            <mxPoint x="720" y="389" as="sourcePoint" />
-            <mxPoint x="830" y="389" as="targetPoint" />
+            <mxPoint x="720" y="400" as="sourcePoint" />
+            <mxPoint x="830" y="400" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VkatFb8tjk3PXEhCPRFh-34" value="1st requst" style="endArrow=classic;html=1;" edge="1" parent="1">
+        <mxCell id="VkatFb8tjk3PXEhCPRFh-34" value="1st connection" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry x="-0.0909" y="15" width="50" height="50" relative="1" as="geometry">
             <mxPoint x="720" y="289" as="sourcePoint" />
             <mxPoint x="830" y="289" as="targetPoint" />
