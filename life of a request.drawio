@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-15T08:31:58.305Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="h5CxoMVIpV3a_x5C56IR" version="14.7.7" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-15T08:35:06.668Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36" etag="33gPDBYgpTRYzATegYat" version="14.7.7" type="github">
   <diagram id="NIDPMBfKksr7cMe8wytX" name="Page-1">
     <mxGraphModel dx="652" dy="396" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -101,8 +101,8 @@
         <mxCell id="H-T82s3oVhORbkwSaDWH-33" value="HTTP2/ codec" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="840" y="390" width="110" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="H-T82s3oVhORbkwSaDWH-35" value="http filter" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="825" y="620" width="140" height="180" as="geometry" />
+        <mxCell id="H-T82s3oVhORbkwSaDWH-35" value="http filter chain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=9;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="800" y="620" width="180" height="180" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
