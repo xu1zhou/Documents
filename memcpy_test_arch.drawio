@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-07-03T10:36:45.610Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="ttzn-vy-G3i3VwqFRo5g" version="14.8.1" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2021-07-03T10:39:41.340Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36" etag="rjEF58itptaxTVfseaIw" version="14.8.1" type="github" pages="8">
   <diagram id="nLtY8Hj69PPEsJg6S1ez" name="第 1 页">
     <mxGraphModel dx="1550" dy="873" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -542,24 +542,22 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="3051NH46198NhMj-smLU-2" value="buffer::ownImpl" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
-          <mxGeometry x="130" y="220" width="530" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="3051NH46198NhMj-smLU-3" value="memcpy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
-          <mxGeometry x="130" y="710" width="530" height="30" as="geometry" />
+          <mxGeometry x="130" y="260" width="530" height="30" as="geometry" />
         </mxCell>
         <mxCell id="3051NH46198NhMj-smLU-8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="3051NH46198NhMj-smLU-1" source="3051NH46198NhMj-smLU-4" target="3051NH46198NhMj-smLU-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="3051NH46198NhMj-smLU-4" value="sliceDeque" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
+        <mxCell id="3051NH46198NhMj-smLU-4" value="SliceDeque" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
           <mxGeometry x="260" y="390" width="400" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="3051NH46198NhMj-smLU-9" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="3051NH46198NhMj-smLU-1" source="3051NH46198NhMj-smLU-5">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="460" y="710" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="3051NH46198NhMj-smLU-11" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.623;entryY=0.127;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="3051NH46198NhMj-smLU-1" source="3051NH46198NhMj-smLU-5" target="3051NH46198NhMj-smLU-3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="3051NH46198NhMj-smLU-5" value="slice" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
-          <mxGeometry x="295" y="570" width="330" height="30" as="geometry" />
+          <mxGeometry x="295" y="520" width="330" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="3051NH46198NhMj-smLU-3" value="memcpy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="3051NH46198NhMj-smLU-1">
+          <mxGeometry x="130" y="650" width="530" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
